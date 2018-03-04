@@ -90,7 +90,6 @@ function showHolidays() {
         } else {
           document.querySelector('.holidays').innerText = monthHolidays.join('\n');
         }
-        clearInterval(interval);
       });
   })
   .catch(function() {
