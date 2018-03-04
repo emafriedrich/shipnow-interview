@@ -1,7 +1,7 @@
 // Cargamos meses en un array, para tenerlos facilmente a mano
 
 const months = new Array(12).fill(0).map((_, i) => {
-  return new Date(`${i + 1}/1`).toLocaleDateString(undefined, {month: 'long'})
+  return new Date(`2018/${i + 1}/1`).toLocaleDateString(undefined, {month: 'long'})
 });
 
 // Obtenemos todos los dias de un mes/anio. Lo saque de https://stackoverflow.com/questions/25588473/how-to-get-list-of-days-in-a-month-with-moment-js
@@ -75,6 +75,7 @@ function fillMonth() {
 
 //Siendo sinceros, es mi primera vez con fetch. Esta muy bueno
 function showHolidays() {
+  document.querySelector('.holidays').innerText = 'Cargando feriados...';
   fetch('http://nolaborables.com.ar/api/v2/feriados/' + actualYear, {method: 'get'}) 
   .then(function(data) {
       data.json().then((holidays) => {
@@ -89,10 +90,11 @@ function showHolidays() {
         } else {
           document.querySelector('.holidays').innerText = monthHolidays.join('\n');
         }
+        clearInterval(interval);
       });
   })
   .catch(function() {
-      
+      document.querySelector('.holidays').innerText = 'Error cargando feriados';
   });
 }
 
