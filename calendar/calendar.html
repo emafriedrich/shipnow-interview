@@ -1,0 +1,237 @@
+<html>
+  <head>
+
+
+    <style type="text/css">
+  /*<![CDATA[*/
+    * {box-sizing: border-box;}
+    strong{font-size: 190%}
+    ul {list-style-type: none;}
+    body {font-family: Verdana, sans-serif;}
+    
+    .prev .next {
+      cursor: pointer;
+    }
+    
+    .month {
+      padding: 70px 25px;
+      width: 100%;
+      background: #1abc9c;
+      text-align: center;
+    }
+
+    .month ul {
+      margin: 0;
+      padding: 0;
+    }
+
+    .month ul li {
+      color: white;
+      font-size: 20px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    .month .prev {
+      float: left;
+      padding-top: 10px;
+    }
+
+    .month .next {
+      float: right;
+      padding-top: 10px;
+    }
+
+    .weekdays {
+      margin: 0;
+      padding: 10px 0;
+      background-color: #ddd;
+    }
+
+    .weekdays li {
+      display: inline-block;
+      width: 13.6%;
+      color: #666;
+      text-align: center;
+    }
+
+    .days {
+      padding: 10px 0;
+      background: #eee;
+      margin: 0;
+    }
+
+    .days li {
+      list-style-type: none;
+      display: inline-block;
+      width: 13.6%;
+      text-align: center;
+      margin-bottom: 5px;
+      font-size:12px;
+      color: #777;
+    }
+
+    .days li .active {
+      padding: 5px;
+      background: #1abc9c;
+      color: white !important
+    }
+
+    /* Add media queries for smaller screens */
+    @media screen and (max-width:720px) {
+      .weekdays li, .days li {width: 13.1%;}
+    }
+
+    @media screen and (max-width: 420px) {
+      .weekdays li, .days li {width: 12.5%;}
+      .days li .active {padding: 2px;}
+    }
+
+    @media screen and (max-width: 290px) {
+      .weekdays li, .days li {width: 12.2%;}
+    }
+    /*]]>*/
+    </style>
+
+    <title></title>
+  </head>
+
+  <body>
+    <h1>CSS Calendar</h1>
+    <h5>Les pido disculpas, a este html lo copie de <a href="https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_calendar">W3schools</a>. Es que entre que no soy mucho ducho con html/css y el paso del tiempo, preferi bajar algo masticado. Solo le agregue clases para manipular el documento y para customizar minimamente el estilo de la fecha de hoy</h5>
+    <div class="month">
+      <ul>
+        <li class="prev">&#10094;</li>
+
+        <li class="next">&#10095;</li>
+
+        <li> <span class="actual-month">August </span>
+          <br />
+          <span class="actual-year" style="font-size:18px">2017</span>
+        </li>
+      </ul>
+    </div>
+      <ul class="weekdays">
+        <li class="mon">Mo</li>
+
+        <li class="tue">Tu</li>
+
+        <li class="wed">We</li>
+
+        <li class="thu">Th</li>
+
+        <li class="fri">Fr</li>
+
+        <li class="sat">Sa</li>
+
+        <li class="sun">Su</li>
+      </ul>
+    <div class="calendar">
+
+      <ul class="days">
+        <div class="first-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+        <div class="second-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+
+        <div class="third-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+
+        <div class="fourth-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+
+        <div class="fift-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+
+        <div class="six-week">
+          <li class="mon-day"></li>
+
+          <li class="tue-day"></li>
+
+          <li class="wed-day"></li>
+
+          <li class="thu-day"></li>
+
+          <li class="fri-day"></li>
+
+          <li class="sat-day"></li>
+
+          <li class="sun-day"></li>
+        </div>
+
+      </ul>
+    </div> 
+
+    <h2>Feriados</h2>
+    <div class="holidays">
+      
+    </div>
+  </body>
+  <script src="js/calendar.js"></script>
+
+</html>

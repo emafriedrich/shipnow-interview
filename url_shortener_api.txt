@@ -1,0 +1,46 @@
+API SERVICES
+
+  POST api/shorten
+
+    PARAMS
+
+      url: string;
+      preferedAlias: string;
+
+    RESULT
+
+      200 (se ha creado un recurso): 
+        success: true;
+        data: 
+          shortUrl: string;
+          validUntil: datetime, format: "YYYY-MM-DD hh:mm:ss";
+      
+      200 (no se ha creado el recurso):
+        success: false;
+        data: null;
+        message: 'El alias ya existe. Intenta con otro';
+
+  GET api/alias
+
+    PARAMS
+      alias: string;
+
+    RESULT
+      baseUrl: string; // La url original
+
+
+
+
+BACKEND IMPLEMENTATION
+
+  En el servidor imagino guardar una tabla de la sgte maera:
+
+  baseUrl | shortUrl | createdAt 
+
+  createdAt + 6.months nos daria el valor "validUntil" para retornarlo al usser.
+
+
+  El servicio POST api/shorten recibiria sus params, se fijaria si el alias existe, sino existe crea un registro en la tabla y la retorna al usuario el alias avisando el periodo en el cual vence.
+  Si el alias existe, avisa con un mensaje de error.
+
+  Una tarea cron diaria se fijaria si hay alias vencidos. Si hay, los borra.
